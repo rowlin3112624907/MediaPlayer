@@ -1,68 +1,84 @@
-# Prerequisites
-*.d
+# =====================================================================
+# MediaPlayer - Git 忽略规则
+# 目标：仓库里只保留源码 + 资源，构建产物和 IDE 个人配置都不入库
+# =====================================================================
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
+# ---------- 1. Qt Creator 构建目录 ----------
+build/
+build-*/
+Build/
+Generated/
+.qtc_clangd/
+*.qtc-cmake-presets*
+CMakeUserPresets.json
+
+# ---------- 2. Qt Creator 个人配置 ----------
+# 含本机 kit、路径、断点等个人环境，别人 pull 下来反而会干扰
+.qtcreator/
+CMakeLists.txt.user
+CMakeLists.txt.user.*
+
+# ---------- 3. CMake / 编译中间产物 ----------
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+cmake_install.cmake
+install_manifest.txt
+CTestTestfile.cmake
+Testing/
+Makefile
+*.ninja
+.ninja_*
+compile_commands.json
+*.cbp
+*.pro.user
+
+# ---------- 4. Qt 自动生成文件 ----------
+moc_*.cpp
+moc_*.h
+*.moc
+qrc_*.cpp
+ui_*.h
+*_autogen/
+*_qmltyperegistrations.cpp
+*.qmlc
+*.jsc
+.qmlcache/
+*.qmltypes
+
+# ---------- 5. 可执行文件 / 二进制 ----------
+*.exe
+*.dll
+*.lib
+*.a
 *.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Linker files
-*.ilk
-
-# Debugger Files
-*.pdb
-
-# Compiled Dynamic libraries
+*.o
 *.so
 *.dylib
-*.dll
-*.so.*
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
+*.pdb
+*.ilk
+*.exp
+*.tlog
+*.ipdb
+*.iobj
 *.app
+*.msi
 
-# Build directories
-build/
-Build/
-build-*/
-
-# CMake generated files
-CMakeFiles/
-CMakeCache.txt
-cmake_install.cmake
-Makefile
-install_manifest.txt
-compile_commands.json
-
-# Temporary files
-*.tmp
-*.log
+# ---------- 6. 压缩包 / 备份 ----------
+*.zip
+*.7z
+*.rar
 *.bak
-*.swp
+*.tmp
+*.autosave
 
-# vcpkg
-vcpkg_installed/
-
-# debug information files
-*.dwo
-
-# test output & cache
-Testing/
-.cache/
+# ---------- 7. 编辑器 / 系统垃圾 ----------
+.vs/
+.vscode/
+.idea/
+*.suo
+*.user
+*.log
+.DS_Store
+Thumbs.db
+desktop.ini
