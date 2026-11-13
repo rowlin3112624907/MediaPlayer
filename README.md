@@ -10,7 +10,7 @@
 
 ## 功能
 
-- **开机动画**：`qml/Ai_RowlinBootAnimation.qml` 用 Canvas 逐笔绘制 "Rowl."，笔画带发光，画完停留、淡出，然后切换到主界面
+- **开机动画**：`qml/Ai_RowlinBootAnimation.qml` 用 Canvas 逐笔绘制 "Rowlin."，笔画带发光，画完停留、淡出，然后切换到主界面
 - **粒子背景**：`qml/Flowing.qml` 双 ParticleSystem + 自定义涡旋 Affector，20 秒一个循环
 - **歌单 / 歌曲列表**：左侧 10 个歌单（歌曲数据来自 MySQL），点击查歌；中间列表显示歌名与歌手
 - **推荐卡片**：顶部横向卡片，随播放进度自动滚动，手动拖动后 4 秒恢复跟随
