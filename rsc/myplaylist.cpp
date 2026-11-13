@@ -3,15 +3,6 @@
 MyplayList::MyplayList(QObject *parent)
     : QAbstractListModel{parent}
 {
-    // QSqlDatabase db= QSqlDatabase::addDatabase("QMYSQL");
-    // db.setHostName("127.0.0.1");
-    // db.setPort(3306);
-    // db.setUserName("root");
-    // db.setPassword("53770pzf");
-    // db.setDatabaseName("mymusic");
-    // if(!db.open()){
-    //     qDebug()<<"数据库打开失败"<<db.lastError().text();
-    // }
 }
 int MyplayList::rowCount(const QModelIndex &parent) const
 {if(parent.isValid())
